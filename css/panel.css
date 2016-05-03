@@ -1,0 +1,79 @@
+@import url("fonts.css");
+* {
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+html {
+    background-color: #de346e;
+    height: 100%
+}
+body {
+    width: 640px;
+    height: 451px;
+}
+body.popout {
+    height: 100%;
+    width: 100%;
+}
+.portrait {
+    float: right;
+    margin-top: 100px;
+    margin-right: 30px;
+}
+.status > p {
+    white-space: nowrap;
+    width: 400px;
+    margin-left: 23.5%;
+    font-family: tooFreakinCute;
+    font-size: 45px;
+    color: white;
+}
+#preview {
+    width: 320px;
+    height: 200px;
+    background-image: url("../img/background/offline_preview.jpg");
+    background-size: cover;
+    position: absolute;
+    left: 50px;
+    overflow: hidden;
+}
+.overlay {
+    background: rgba(0, 0, 0, .75);
+    padding: 45px 0 66px 0;
+    opacity: 0;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+}
+#preview:hover .overlay {
+    opacity: 1;
+}
+#twitch {
+    margin-left: 110px;
+}
+#social-bar {
+    width: 600px;
+    margin-top: 285px;
+    margin-left: 90px;
+    list-style: none;
+}
+#social-bar li {
+    display: inline-block;
+}
+#social-bar a {
+    margin-left: 30px;
+    width: 50px;
+}
+#social-bar #Twitter:hover img {
+    content: url("../img/social/twitter_h.png");
+}
+#social-bar #Facebook:hover img {
+    content: url("../img/social/facebook_h.png");
+}
+#social-bar #Instagram:hover img {
+    content: url("../img/social/insta_h.png");
+}
+#social-bar #Youtube:hover img {
+    content: url("../img/social/yt_h.png");
+}
