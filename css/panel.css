@@ -14,7 +14,7 @@ body {
     width: 640px;
     height: 451px;
 }
-body.popout {
+.popout {
     height: 100%;
     width: 100%;
 }
@@ -128,28 +128,28 @@ body.popout {
 #twitch {
     margin-left: 110px;
 }
-#social-bar {
+.social-bar {
     width: 600px;
     margin-top: 285px;
     margin-left: 90px;
     list-style: none;
 }
-#social-bar li {
+.social-bar li {
     display: inline-block;
 }
-#social-bar a {
+.social-bar a {
     margin-left: 30px;
     width: 50px;
 }
-#social-bar #Twitter:hover img {
+.social-bar #Twitter:hover img {
     content: url("../img/social/twitter_h.png");
 }
-#social-bar #Facebook:hover img {
+.social-bar #Facebook:hover img {
     content: url("../img/social/facebook_h.png");
 }
-#social-bar #Instagram:hover img {
+.social-bar #Instagram:hover img {
     content: url("../img/social/insta_h.png");
 }
-#social-bar #Youtube:hover img {
+.social-bar #Youtube:hover img {
     content: url("../img/social/yt_h.png");
 }
