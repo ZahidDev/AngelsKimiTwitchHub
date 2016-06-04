@@ -3,6 +3,7 @@
     outline: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 html {
@@ -37,19 +38,15 @@ body.popout {
     bottom: 0;
     right: 0;
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     right: 20px;
     bottom: 300px;
@@ -59,7 +56,6 @@ body.popout {
     position: relative;
     z-index: 100;
     cursor: pointer;
-    -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
     align-self: flex-end;
     margin-bottom: 115px;
@@ -69,10 +65,13 @@ body.popout {
     height: 2px;
     background: white;
     margin: 7px auto;
+    -webkit-transition: 0.8s all .3s;
     transition: 0.8s all .3s;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 #toggle.on .one {
+    -webkit-transform: rotate(45deg) translate(5px, 5px);
     transform: rotate(45deg) translate(5px, 5px);
     background-color: #CF000F;
 }
@@ -80,30 +79,31 @@ body.popout {
     opacity: 0;
 }
 #toggle.on .three {
+    -webkit-transform: rotate(-45deg) translate(7px, -8px);
     transform: rotate(-45deg) translate(7px, -8px);
     background-color: #CF000F;
 }
 .layer {
     position: absolute;
-    right: 0;
-    bottom: 120px;
-    width: 30px;
-    height: 30px;
+    right: 10px;
+    bottom: 130px;
+    width: 5px;
+    height: 5px;
     background: white;
     border-radius: 50%;
     z-index: 99;
     pointer-events: none;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
     visibility: hidden;
-    transition: 2.40s all ease;
+    -webkit-transition: 1.50s all ease;
+    transition: 1.50s all ease;
 }
 #button-wrapper.clicked .layer {
     visibility: visible;
-    -webkit-transform: scale(100);
-    -ms-transform: scale(100);
-    transform: scale(100);
-    -webkit-transition: 2.50s all ease .2s;
-    transition: 2.50s all ease .2s;
+    -webkit-transform: scale(400);
+    transform: scale(400);
+    -webkit-transition: 2s all ease .2s;
+    transition: 2s all ease .2s;
 }
 #preview {
     width: 320px;
