@@ -1,4 +1,3 @@
-
 function statusChecker() {
     var request = new XMLHttpRequest();
     request.open("GET", "https://api.twitch.tv/kraken/streams/angelskimi", true);
@@ -31,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         buttonWrapper.classList.toggle("clicked");
         this.classList.toggle("on");
     });
-    setInterval(statusChecker,30000);
+
+    setInterval(statusChecker, 30000);
     statusChecker();
 });
