@@ -24,6 +24,6 @@ function statusChecker() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    setInterval(statusChecker,60000);
+    setInterval(statusChecker,30000);
     statusChecker();
 });

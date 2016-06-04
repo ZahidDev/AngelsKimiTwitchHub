@@ -1,5 +1,5 @@
 var isNotified = false;
-setInterval(statusChecker,60000);
+setInterval(statusChecker,30000);
 statusChecker();
 
 function statusChecker() {
