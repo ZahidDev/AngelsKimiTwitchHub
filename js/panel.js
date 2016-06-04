@@ -1,3 +1,4 @@
+
 function statusChecker() {
     var request = new XMLHttpRequest();
     request.open("GET", "https://api.twitch.tv/kraken/streams/angelskimi", true);
@@ -24,6 +25,12 @@ function statusChecker() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    var settingsIcon = document.getElementById("toggle");
+    var buttonWrapper = document.getElementById("button-wrapper");
+    settingsIcon.addEventListener('click', function() {
+        buttonWrapper.classList.toggle("clicked");
+        this.classList.toggle("on");
+    });
     setInterval(statusChecker,30000);
     statusChecker();
 });
