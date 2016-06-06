@@ -1,8 +1,15 @@
-var isNotified = false;
-setInterval(statusChecker,30000);
+chrome.storage.local.set({
+    'isNotified': false
+});
+
+setInterval(statusChecker, 30000);
 statusChecker();
 
 function statusChecker() {
+    var isNotified;
+    chrome.storage.local.get("isNotified", function(val) {
+        isNotified = val.isNotified;
+    });
     var request = new XMLHttpRequest();
     request.open("GET", "https://api.twitch.tv/kraken/streams/angelskimi", true);
 
@@ -10,10 +17,11 @@ function statusChecker() {
         if (request.readyState == 4 && request.status == 200) {
             var twitchAPI = JSON.parse(request.responseText);
             var online = twitchAPI.stream !== null ? true : false;
-
             if (online) {
                 if (!isNotified) {
-                    isNotified = true;
+                    chrome.storage.local.set({
+                        "isNotified": true
+                    });
                     notification();
                 }
                 chrome.browserAction.setIcon({
@@ -23,7 +31,9 @@ function statusChecker() {
                     title: "AngelsKimi is Live!"
                 });
             } else {
-                isNotified = false;
+                chrome.storage.local.set({
+                    "isNotified": false
+                });
                 chrome.browserAction.setIcon({
                     path: "../img/icons/kimi_off_19.png"
                 });
