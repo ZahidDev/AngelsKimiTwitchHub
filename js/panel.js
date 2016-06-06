@@ -31,6 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.toggle("on");
     });
 
-    setInterval(statusChecker, 30000);
-    statusChecker();
+    var offset;
+    var currentDate = new Date();
+    var junOffset = new Date(currentDate.getFullYear(), 6, 1).getTimezoneOffset();
+
+    if (currentDate.getTimezoneOffset() == junOffset)
+        offset = -7;
+    else
+        offset = -8;
+
+    var LADate = new Date(new Date().getTime() + offset * 3600 * 1000).toUTCString().replace(/ GMT$/, "");
+    var LADateArray = LADate.split(" ");
+    var LATime = LADateArray[4];
+
+    if ((LATime >= "16:00:00") && (LATime <= "20:30:00")) {
+        setInterval(statusChecker, 25000);
+        statusChecker();
+    } else {
+        setInterval(statusChecker, 60000);
+        statusChecker();
+    }
 });
