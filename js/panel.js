@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.toggle("on");
     });
 
-    setInterval(statusChecker, 120000);
+    setInterval(statusChecker, 90000);
     statusChecker();
 });
